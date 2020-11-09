@@ -21,3 +21,5 @@ class Employee {
         return this.email
     }
 }
+
+module.exports = Employee;

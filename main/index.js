@@ -1,10 +1,14 @@
+
+// linking all the required javascript files
+const Employee = require('./lib/Employee');
+const Intern = require('./lib/Intern');
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const  generateHtml = require('./generateHtml');
 const inquirer = require('inquirer')
 const fs = require('fs');
-const generateMarkdown = require('./main/utils/generateHtml')
 
-// array of questions for user
-
-// function to write README file
+// function to write html file
 const writeFile = answers => {
 fs.writeFileSync('./develop/dist/Profile.html', generateHtml(answers))
 
