@@ -13,7 +13,7 @@ const teamMembers = [];
 // function to write html file
 const createHtml = teamMembers => {
   generateHtml(teamMembers)
-//fs.writeFileSync('./develop/dist/Profile.html', generateHtml(teamMembers))
+fs.writeFileSync('./develop/dist/Profile.html', generateHtml(teamMembers))
 
 }
 
