@@ -12,7 +12,8 @@ const teamMembers = [];
 
 // function to write html file
 const createHtml = teamMembers => {
-fs.writeFileSync('./develop/dist/Profile.html', generateHtml(teamMembers))
+  generateHtml(teamMembers)
+//fs.writeFileSync('./develop/dist/Profile.html', generateHtml(teamMembers))
 
 }
 
@@ -21,6 +22,8 @@ fs.writeFileSync('./develop/dist/Profile.html', generateHtml(teamMembers))
 
 
 const init = () => {
+
+  // user input for new manager
   inquirer.prompt([
         {
             type: 'input',
@@ -75,6 +78,7 @@ const init = () => {
               }
            },                
     ])
+    //console logging then pushing new manager object
     .then(answers => {
         console.log("==============")
         console.log(answers)
@@ -85,6 +89,7 @@ const init = () => {
     });
  };
  const engineer = () => {
+   // user input for new engineer
   inquirer.prompt([
         {
             type: 'input',
@@ -130,7 +135,7 @@ const init = () => {
             name: 'engineerGithub',
             message: `What is your engineer's GitHub? (Required)`,
             validate: gitHubInput => {
-                if (gitHubrInput) {
+                if (gitHubInput) {
                   return true;
                 } else {
                   console.log(`Please enter your engineer's Git.`);
@@ -139,6 +144,8 @@ const init = () => {
               }
            },                
     ])
+
+    // console logging then pushing new engineer object
     .then(answers => {
         console.log("==============")
         console.log(answers)
@@ -149,6 +156,7 @@ const init = () => {
     });
  };
  const intern = () => {
+   // user input for new intern
   inquirer.prompt([
         {
             type: 'input',
@@ -192,25 +200,28 @@ const init = () => {
            {
             type: 'input',
             name: 'internGithub',
-            message: `What is your intern's GitHub? (Required)`,
-            validate: gitHubInput => {
-                if (gitHubrInput) {
+            message: `What is your intern's school name? (Required)`,
+            validate: schoolNameInput => {
+                if (schoolNameInput) {
                   return true;
                 } else {
-                  console.log(`Please enter your intern's Git.`);
+                  console.log(`Please enter your intern's school name.`);
                   return false;
                 }
               }
            },                
     ])
+    //console logging then pushing new intern object
     .then(answers => {
         console.log("==============")
         console.log(answers)
         console.log("==============")
         const intern = new Intern (answers.internName, answers.internId, answers.internEmail, answers.internOfficeNumber ) 
         teamMembers.push(intern);
-        createHtml()
-    });
+      
+    })
+    // promise chain for logic control to call function to link to html creation js.  
+    .then(createHtml());
  };
 
  

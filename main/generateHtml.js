@@ -1,5 +1,3 @@
-const Engineer = require("./lib/Engineer");
-const Manager = require("./lib/Manager");
 
 // generate html
 function generateHtml(teamMember) {
@@ -22,26 +20,26 @@ function generateHtml(teamMember) {
     <div>
         <h3>Manager</h3>
         <ul>
-            <li>${teamMember.Manager.getName()}</li>
-            <li>${teamMember.Manager.getId()}</li>
-            <li>${teamMember.Manager.getEmail()}</li>            
-            <li>${teamMember.Manager.getOfficeNumber()}</li>
+            <li>${teamMember.manager.getName()}</li>
+            <li>${teamMember.manager.getId()}</li>
+            <li>${teamMember.manager.getEmail()}</li>            
+            <li>${teamMember.manager.getOfficeNumber()}</li>
         </ul>
     </div>
     <div>
         <h3>Engineer</h3>
         <ul>
-            <li>${teamMember.Engineer.getName()}</li>
-            <li>${teamMember.Engineer.getId()}</li>
-            <li>${teamMember.Engineer.getEmail()}</li>
-            <li>${teamMember.Engineer.getGitHub()}</li>
+            <li>${teamMember.engineer.getName()}</li>
+            <li>${teamMember.engineer.getId()}</li>
+            <li>${teamMember.engineer.getEmail()}</li>
+            <li>${teamMember.engineer.getGitHub()}</li>
         </ul>
         <h3>Intern</h3>
         <ul>
-            <li>${teamMember.Intern.getName()}</li>
-            <li>${teamMember.Intern.getId()}/li>
-            <li>${teamMember.Intern.getEmail()}</li>
-            <li>${teamMember.Intern.getSchool()}</li>
+            <li>${teamMember.intern.getName()}</li>
+            <li>${teamMember.intern.getId()}/li>
+            <li>${teamMember.intern.getEmail()}</li>
+            <li>${teamMember.intern.getSchool()}</li>
         </ul>
     </div>
 </div>
